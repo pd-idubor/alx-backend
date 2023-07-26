@@ -13,12 +13,12 @@ class LRUCache(BaseCaching):
 
     def put(self, key, item):
         """Assigns to dict the item value for the key"""
-        if key in self.cache_data:
-            self.cache_data.pop(key)
-        elif len(self.cache_data) >= type(self).MAX_ITEMS:
-            lru, val = self.cache_data.popitem(last=False)
-            print("DISCARD: {}".format(lru))
         if key and item is not None:
+            if key in self.cache_data:
+                self.cache_data.pop(key)
+            elif len(self.cache_data) >= type(self).MAX_ITEMS:
+                lru, val = self.cache_data.popitem(last=False)
+                print("DISCARD: {}".format(lru))
             self.cache_data[key] = item
 
     def get(self, key):
