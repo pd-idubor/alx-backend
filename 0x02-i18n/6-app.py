@@ -5,6 +5,14 @@ from flask_babel import Babel
 from typing import Union
 
 
+users = {
+    1: {"name": "Balou", "locale": "fr", "timezone": "Europe/Paris"},
+    2: {"name": "Beyonce", "locale": "en", "timezone": "US/Central"},
+    3: {"name": "Spock", "locale": "kg", "timezone": "Vulcan"},
+    4: {"name": "Teletubby", "locale": None, "timezone": "Europe/London"},
+}
+
+
 class Config(object):
     """Config class"""
     LANGUAGES = ["en", "fr"]
